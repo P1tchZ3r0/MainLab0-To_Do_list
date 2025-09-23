@@ -7,8 +7,7 @@
 #include <QPushButton>
 #include <QLabel>
 #include <QMessageBox>
-#include <QCoreApplication>
-#include <QDebug>
+#include <QInputDialog>
 class Task {
 private:
     QString Desc;
@@ -40,6 +39,11 @@ public:
             tasks.removeAt(index);
         }
     }
+    void editTaskDescription(int index, const QString& newDesc) {
+        if (index >= 0 && index < tasks.size()) {
+            tasks[index].setDescription(newDesc);
+        }
+    }
     void CompleteTask(int& index) {
         if (index >= 0 and index < tasks.size()) {
             tasks[index].setCompleted(!tasks[index].isCompleted());
@@ -64,6 +68,28 @@ private slots:
             todoList.SetTask(text);
             updateTaskList();
             taskInput->clear();
+        }
+    }
+    void editTask(QListWidgetItem* item) {
+        int currentRow = taskList->currentRow();
+        if (currentRow < 0) {
+            return;
+        }
+
+        QString currentText = todoList.getTasks()[currentRow].getDesc();
+        QString newText = QInputDialog::getText(this, "Редактирование задачи", "Новое описание", QLineEdit::Normal, currentText);
+
+        if (!newText.trimmed().isEmpty() && newText != currentText) {
+            todoList.editTaskDescription(currentRow, newText.trimmed());
+            updateTaskList();
+        }
+
+    }
+    void removeTask() {
+        int currentRow = taskList->currentRow();
+        if (currentRow >= 0) {
+            todoList.DelTask(currentRow);
+            updateTaskList();
         }
     }
     void toggleTask() {
@@ -91,12 +117,41 @@ private:
     ToDoList todoList;
     void setupUI() {
 
+        QVBoxLayout *mainLayout = new QVBoxLayout(this);
+        QHBoxLayout *inputLayout = new QHBoxLayout();
+        QHBoxLayout *btnLayout = new QHBoxLayout();
+        
+        taskList = new QListWidget();
+        taskInput = new QLineEdit();
+        addButton = new QPushButton("Добавить");
+        removeButton = new QPushButton("Удалить");
+        toggleButton = new QPushButton("Выполнено");
+        clearButton = new QPushButton("Удалить выполненные");
+
+        mainLayout->addWidget(taskList);
+        mainLayout->addLayout(inputLayout);
+        mainLayout->addLayout(btnLayout);
+
+        inputLayout->addWidget(taskInput);
+        inputLayout->addWidget(addButton);
+
+        btnLayout->addWidget(removeButton);
+        btnLayout->addWidget(toggleButton);
+        btnLayout->addWidget(clearButton);
+        
     }
     void connectSignals() {
-
+        connect(addButton, &QPushButton::clicked, this, &MainWindow::SetTask);
+        connect(removeButton, &QPushButton::clicked, this, &MainWindow::removeTask);
+        connect(toggleButton, &QPushButton::clicked, this, &MainWindow::toggleTask);
+        connect(clearButton, &QPushButton::clicked, this, &MainWindow::DelCompleted);
+        connect(taskList, &QListWidget::itemDoubleClicked, this, &MainWindow::editTask);
     }
     void updateTaskList() {
-
+        taskList->clear();
+        for (const Task& task : todoList.getTasks()) {
+            taskList->addItem(task.toString());
+        }
     }
 };
 
@@ -104,28 +159,7 @@ private:
 int main(int argc, char* argv[]) {
     QApplication app(argc, argv);
     MainWindow window; window.show(); return app.exec();
-    
-    //Task task1("Первая", false);
-    //Task task2("Вторая", true);
-
-    //qDebug() << "Задача 1:" << task1.toString();
-    //qDebug() << "Задача 2:" << task2.toString();
-
-    //qDebug() << "\n=== ТЕСТ ГЕТТЕРОВ ===";
-    //qDebug() << "Описание задачи 1:" << task1.GetDesc();
-    //qDebug() << "Выполнена задача 1:" << task1.IsComplete();
-    //qDebug() << "Описание задачи 2:" << task2.GetDesc();
-    //qDebug() << "Выполнена задача 2:" << task2.IsComplete();
-
-    //qDebug() << "\n=== ТЕСТ СЕТТЕРОВ ===";
-    //task1.setDescription("Измененное описание");
-    //task1.setCompleted(true);
-    //qDebug() << "После изменений - Задача 1:" << task1.toString();
-
-
-
     return 0;
 
-
-
 }
+#include "main.moc"
