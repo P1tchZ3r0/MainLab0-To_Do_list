@@ -8,6 +8,7 @@
 #include <QLabel>
 #include <QMessageBox>
 #include <QInputDialog>
+#include <QGraphicsDropShadowEffect>
 class Task {
 private:
     QString Desc;
@@ -22,7 +23,7 @@ public:
     //Сеттеры
     void setDescription(const QString& desc) { Desc = desc; }
     void setCompleted(bool comp) { complete = comp; }
-    //Вывод GUI
+
     QString toString() const {
         return QString("%1 %2").arg(complete ? "[V]" : "[]").arg(Desc);
     }
@@ -31,24 +32,29 @@ class ToDoList {
 private:
     QList<Task> tasks;
 public:
+
     void SetTask(const QString& Desc) {
         tasks.append(Task(Desc));
     }
+
     void DelTask(int& index) {
         if (index >= 0 and index < tasks.size()) {
             tasks.removeAt(index);
         }
     }
+
     void editTaskDescription(int index, const QString& newDesc) {
         if (index >= 0 && index < tasks.size()) {
             tasks[index].setDescription(newDesc);
         }
     }
+
     void CompleteTask(int& index) {
         if (index >= 0 and index < tasks.size()) {
             tasks[index].setCompleted(!tasks[index].isCompleted());
         }
     }
+
     const QList<Task>& getTasks() const {
         return tasks;
     }
@@ -56,11 +62,13 @@ public:
 
 class MainWindow : public QWidget {
     Q_OBJECT
+
 public:
     MainWindow(QWidget* parrent = nullptr) : QWidget(parrent) {
         setupUI();
         connectSignals();
     }
+
 private slots:
     void SetTask() {
         QString text = taskInput->text().trimmed();
@@ -70,7 +78,8 @@ private slots:
             taskInput->clear();
         }
     }
-    void editTask(QListWidgetItem* item) {
+
+    void editTask() {
         int currentRow = taskList->currentRow();
         if (currentRow < 0) {
             return;
@@ -85,6 +94,7 @@ private slots:
         }
 
     }
+
     void removeTask() {
         int currentRow = taskList->currentRow();
         if (currentRow >= 0) {
@@ -92,6 +102,7 @@ private slots:
             updateTaskList();
         }
     }
+
     void toggleTask() {
         int currentRow = taskList->currentRow();
         if (currentRow >= 0) {
@@ -99,6 +110,7 @@ private slots:
             updateTaskList();
         }
     }
+
     void DelCompleted() {
         for (int i = todoList.getTasks().size() - 1; i >= 0; i--) {
             if (todoList.getTasks()[i].isCompleted()) {
@@ -115,7 +127,19 @@ private:
     QPushButton* toggleButton;
     QPushButton* clearButton;
     ToDoList todoList;
+
     void setupUI() {
+        setWindowTitle("To-Do List");
+        resize(400, 500);
+        setMinimumSize(300, 200);                  
+        setMaximumSize(800, 600); 
+
+        QGraphicsDropShadowEffect* shadow = new QGraphicsDropShadowEffect;
+        shadow->setBlurRadius(15);
+        shadow->setColor(QColor(0, 0, 0, 60));
+        shadow->setOffset(0, 2);
+        setGraphicsEffect(shadow);
+
 
         QVBoxLayout *mainLayout = new QVBoxLayout(this);
         QHBoxLayout *inputLayout = new QHBoxLayout();
@@ -140,6 +164,7 @@ private:
         btnLayout->addWidget(clearButton);
         
     }
+
     void connectSignals() {
         connect(addButton, &QPushButton::clicked, this, &MainWindow::SetTask);
         connect(removeButton, &QPushButton::clicked, this, &MainWindow::removeTask);
@@ -147,6 +172,7 @@ private:
         connect(clearButton, &QPushButton::clicked, this, &MainWindow::DelCompleted);
         connect(taskList, &QListWidget::itemDoubleClicked, this, &MainWindow::editTask);
     }
+
     void updateTaskList() {
         taskList->clear();
         for (const Task& task : todoList.getTasks()) {
@@ -154,7 +180,6 @@ private:
         }
     }
 };
-
 
 int main(int argc, char* argv[]) {
     QApplication app(argc, argv);
