@@ -1,10 +1,14 @@
 <FlowDocument xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" FontFamily="Segoe UI" FontSize="12">
   <FlowDocument.Tag><![CDATA[{
-  "timestamp": "2025-09-20 23:48:03",
+  "timestamp": "2025-09-24 13:16:39",
   "files": {
     "C:\\Users\\Admin\\source\\repos\\Project1\\project1.vcxproj": {
       "before": "7Vttc9u4Eb7Pnel/4Gh8Gbs3Ei1Zlp1I5o0sya6msuxYctzeaEZDkZDEhiR4AOiX9vqL+ie7IAC+iJTi2Iovl+YyF1LA4m2BfXafBfPf2g8/tH5+8FztDhHqYP+kVK3slzTkW9h2/MVJKWTz8nHpZ+PPf2pdEfxPZDGti+Zm6LKxSRaI0ZPSaei4dkmDXnz4tWQseKfr1Foiz6QVz7EIpnjOKhb2dBvdIRcHiOgenfFmem1//6AEvWtaq8+Qd05wGGgDc4bck5IcsIP9ubMIiclgglQIg3hRrdb3LTe00UnpGrnIpOi3h0ZdtYA2ma4MKdPSs8V8Mvy/1pVrsjkmngGdtPT4l6iHAqGPosafmFwXzcLFxqlFElufWEuPdSxUDkuAzWCPGbWfu3hmujlFn4eObfy7/rbTrra7jfLZfuOwfFCtnpVP28dvy+2jw8OjXrVTbR/v/yfWTdRG6usaYzY0PUQD00LGGNt44FDW0rPlUvhv6PEeE9t4z+ofRndwJlu6KpISt45v43sqTqHamw/iFBvV/cp+pdao7sOzpW8U3dTdheN/Ro8pad5ppIREu/KMewEmTJNH56S0s/uhIw3pymTLvclFbC+dIKhIU6sEsE+0pOlFuwbnz3a4aZyU3pgBps2d3cyR3PttZ1fpZ09InJyIZ8pIREFJmV6mB2VAsUGMMXYpYsZdtX6QGIYqlRq9DFkQsq5DADMweTSIsMhJS1+tkQ3a4wGo0PGcfyHauQ79seOhgTMjJnm8oeYCGXM4lailf1JO9tdZmsS0GCIjmOoQM3iARaULlWAaYMaPATLaQeA6VgQ4K0YYVct2fR8695DtmAwVrbO4Xja+Io4HKxO6SJlDtpwLFx6krOW+4AzEWPTlT4DNYe+b33+1yi+5+/3Pg5EsfIjGGcjvPTDkc/8PNsLA7ydYkxZ+wSlbjzTqII+WCKKJGGryK7yhiHBfAZa2CpMpgKuEIKbwMjVh9ADOhu6KQ76z+9mdiYZ7MQbrKcWkoV2oNTWwGhGKkihmAyavs8dvRk9qIZkDyPfjwuShYqzhjFykYoBCgEvYf+0F+s2fxKxngu7VYGDBX3Iw0b0aTEQBPEDa8uqSSCsZQg3aX/iYIHGUpavd8uiMhOCyC8ZRUxg4/keI2gnykM9Md8vDy5BhZRA19stP06q1Ggr9RddqoJefpLUDfYlTlBvsFc9QbuzNJ6gwOOIsB0JnCCZ5XPxiSC6ADBU5uh3sBY6L5EYDQrVtEY2bruSiACFRBOwgalSa3XeT9+NJo/K2Upt49M6q7ddq00Z94gji+qn6yXt269icdz9BEtjXE6Q6gABNGZw39U/Nw/tIA2TRyb3jH9TKfAXNH3c3rXkPAvZNKhGazCjuMoiYvlH+xXpH7kw3RB2TMo3/dHzX8VH0ShlxLDaCvyFeiUrYkmCY12KI7rUyMC/PodS5Q+Wocjq1Ajek/P/oN4KQh/jgSChDDwHRylGmQyvfH9SBNorn8Vt41uv1w4Z8HsnnsZZetJxvZqVqDcnyKEXezEWEs16Y5AALfpHyPu11InEnp7BAivo+z0pE7ERxonxF3CYyqFSTs6gtECIfgHlNZdLYoSZMegR77swd69YkPle3UT88OmrW640j2P1usQyoY01NYiy9BwtFm/1X07dhZxfG6NG3Wnq+PJ7RwPQXIbDBEYMmJqQIKLOtIKgetfRcVdzocsYzV2dgqNzBplS+UpE0gFkBERU6vjAfQAHIBuaaLo6FrwgKCLYQpZgksEON6W1/2L28HTVvhv3OZbfXnKoXqDioNae9Yft00Jv2/j7uDbu97rQ96J8P4TkaX163z3tNEGvUm1B1enPefD+eDi+n8fttv3veG4+mg/4przq/6avXzuV1L3r/cXfNzGBr1tQkW5MIjDFXnDppufKUGvCCmF7XZOYppN5ibUcQXVgTNwW2D/pWbN+4gPSiM14SZNrI7g4GkCTKCsQNR2EQEFA8nAbCwuDU9H1EDOEyiuvipmPont3yfMCUtSlPYrK+H9F70Xx9fdwFRK1noevyzA1V+smUxZLScAY8/2lEf0PiJFMoRCHbsOJSWjx2SbYlwdIuCpBvQ6aWO5Z1bsV1ZuAyGtJnVODnWo8gRcFpPEWMe42nyPV8Rh6vsOOzSJoukese1KL3NISmF5PB0XRFkRZk1Jp2sju778fd/vXehK82PUheNjNUvrpoQAXsb34NMWvqF+1h/6w3Gnd7V9yGh51/vGOQQZIJtshLCgao+YA8sjhJ8snUZAXCCA/7ZXBHjEBuTTZRSXnxswE5Tfgj64JwBikqSIqO8Ufky44bh28PZ416tV63rHnVnktZV2KmlPqL6kKBVptYS4cBQoZETVHKiFV+vrfjINB7QFbIPTlAxh0E9/AmLXNdbWwuPZ97nc7lRbc9PsMuv4qQTYtq4mbnCKyfJ+N4oinl8pRtrq2PeygiKpsD0OimYJVfbKQdnMYKP4Ku0RwRMGGwYDFKQUU8N5EqjLB4Z1fwi72Jiswr6AHceUokbnYNfhLzpKrNURnwg+OlHK64Lm46CmejR4iPPEOe05aeFKWknofB4LATaGtdOLab2JtMfHN0jiD5BrJTC5+74NWaeBriZPQIwaSzRNZHKkOcfHncJAPA/KJAhDcCpYVUS09NrHWNKA6JhXJRf+IVv5UQAHxuwWLFDVIS5ETcKtq26PpupeIlZD7HA+V+rPrHDHP4I1Eum4PUd8L1+oQrUjxcQ7wq3YJspgqBZwDD/6/MS+n+SbxL0sffi3cBq/r6SNYKEcoyJY4o3+nS1uiS/RSCwz9xeIocJ0xPEkwYkxD/Tpn4Rw3fKVMxoYpj2bXcRhCLtdVxB8+kPinK8Z2VxHwl1mqefYjEa748bpJhIV8zK3mag5Qpy+cnI5/FRBJiAgQh5gzJ94Ge6fgVyBvH182rn8Zlv5TjnYSUYS/62DHpRsQzHramkIa00ZxWlhVrxtRnDNCM8/WIwnaxFfI7zpYeF8VbDvlu/tmifUbUCNu94RYYkBsl4dtJWrHvw1dbdKvMbV1yUt0lzSERC5knOrEhazSxQ8975FuTyd2JaWXydaIoWQPPoUGuY6tTt1ytfPogsmBxXnHm+JNfPfMj4kkXmSEr+9jFCxxdLd1bUVJZK5+Not+vd4f1i6OVL7q2VoZLkXfWTz9V4cJK3mvdHog7rSfcbZXvbX6/A/I2v+LRyj3tmVuo1d4sWHN4M9D4s8BY+Nd10a4l23gB6Sm439nqNirvp2UsFXI7YqxkcOHNtnv8C5YNR1uOBCdavslJgEYSoFFlqaIEe+Sd7SSzpuegzzaNv+Cu/Jln53cw/4LJ/8EA4LLGAeArtf/CA/tlEKBgJ18TAwqGL1z8BhyA0CHnr7eKiZtjgjwM5f7xQP4TzY3fssMNLf9uJQ64Uh9Qqq/O489QxZdqUja6P+b398b/AA==",
       "after": "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"
+    },
+    "C:\\Users\\Admin\\source\\repos\\Project1\\project1.vcxproj.user": {
+      "before": "tZJNS8NAEIaLR8H/sCyFtAez8QMRSVKkgpceWg3ek83kQzaZsDtbWuiPd5OSQ6WCIJ6WfWd55plh8WIyCRe7RrEtaFNjG/EbP+AMWol53ZYRt1RcP/JFfHUZrjV+giSWICrzMb5fWq2hJc4cpTURr4i6JyGMrKBJjd/UUqPBgnyJjchhCwo70KIxma1VLm6D4I47OmM931Vo/6rRdmyJbV7ToORNZ+5W1KXVaZ/MD9PZWqVUoG7mXhR5L5DZ8rB7uPeOKAdboUzVkJegxzPZdxA/W8JQ/FwfXMSJzDm/VZqBiviG3oHIrcrwvypvKEErq7Hz0NRNIs7l4b8LvoGC1MDpVr+r/Npu8O1/T/wF",
+      "after": "vZJdS8MwFIaHl4L/IYRBtwub+oGItB0ywZtdbFq8b9PTD0l6SnIyNtiPt+3oxYaCIHgV8p7Dk4eXVBeTSbjYacW2YGyNTcRv/IAzaCTmdVNG3FFx/cgX8dVluDb4CZJYgqjsx7i/dMZAQ5x1lMZGvCJqn4SwsgKdWl/X0qDFgnyJWuSwBYUtGKFt5mqVi9sguOMdnbGe301o/2rQtWyJTV7ToORNZ92tqEtn0j6ZH6aztUqpQKPnXhR5L5C58rB7uPeOqA62QpmqIS/BjGeybyF+doSh+Hk+uIgTme/8VmkGKuIbegeirirL/6q8oQSdrMaX41CcJ/+j9gYKUgunfZ6r/FYu7Jvsv038BQ=="
     }
   }
 }]]></FlowDocument.Tag>
@@ -17,7 +21,7 @@
       <Span TextDecorations="Underline">Project Format Conversion</Span>
     </Paragraph>
     <Paragraph Margin="12,8" FontSize="18">
-      <Span>Report generated on 2025-09-20 23:48:03</Span>
+      <Span>Report generated on 2025-09-24 13:16:39</Span>
     </Paragraph>
   </Section>
   <Section>
@@ -36,6 +40,22 @@
                         [Diff before/current]
                     </Hyperlink>
       <Hyperlink NavigateUri="file://C:\Users\Admin\source\repos\Project1\project1.vcxproj?diff&amp;after&amp;current">
+                        [Diff after/current]
+                    </Hyperlink>
+      <LineBreak />
+    </Paragraph>
+    <Paragraph Margin="24,12,0,0">
+      <Span FontFamily="Consolas" FontSize="14" Background="WhiteSmoke"><![CDATA[C:\Users\Admin\source\repos\Project1\project1.vcxproj.user]]></Span>
+      <LineBreak />
+      <Hyperlink NavigateUri="file://C:\Users\Admin\source\repos\Project1\project1.vcxproj.user?before">[Before]</Hyperlink>
+      <Hyperlink NavigateUri="file://C:\Users\Admin\source\repos\Project1\project1.vcxproj.user?after">[After]</Hyperlink>
+      <Hyperlink NavigateUri="file://C:\Users\Admin\source\repos\Project1\project1.vcxproj.user?diff&amp;before&amp;after">
+                        [Diff before/after]
+                    </Hyperlink>
+      <Hyperlink NavigateUri="file://C:\Users\Admin\source\repos\Project1\project1.vcxproj.user?diff&amp;before&amp;current">
+                        [Diff before/current]
+                    </Hyperlink>
+      <Hyperlink NavigateUri="file://C:\Users\Admin\source\repos\Project1\project1.vcxproj.user?diff&amp;after&amp;current">
                         [Diff after/current]
                     </Hyperlink>
       <LineBreak />
@@ -988,4 +1008,4 @@
     <Paragraph />
   </Section>
 </FlowDocument>
-<!--tTEpQCF9QpxEMdubJkGjeiMRN4Hpj44/9sWgdKDH17A=-->
+<!--vZOMx9Tv9Bth+bT30uPNo8d6HSD3YGK5RrT+NIrV2k0=-->
