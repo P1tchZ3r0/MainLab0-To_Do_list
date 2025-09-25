@@ -23,9 +23,9 @@ private slots:
     void editTask();
     void removeTask();
     void toggleTask();
-    void DelCompleted();
 
 private:
+    QShortcut* deleteShortcut = nullptr;
     QListWidget* taskList;
     QLineEdit* taskInput;
     QPushButton* addButton;

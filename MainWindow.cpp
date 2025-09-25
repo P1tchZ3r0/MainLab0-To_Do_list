@@ -1,12 +1,21 @@
 ﻿#include "MainWindow.h"
+#include "todolist.h"
 #include <QVBoxLayout>
 #include <QHBoxLayout>
+#include <QListWidget>
+#include <QLineEdit>
+#include <QPushButton>
 #include <QInputDialog>
 #include <QGraphicsDropShadowEffect>
 #include <QColor>
+#include <QCloseEvent>
+#include <QMessageBox>
+#include <QShortcut>
 
 MainWindow::MainWindow(QWidget* parent) : QWidget(parent) {
+    todoList.loadFromSettings();
     setupUI();
+    new QShortcut(QKeySequence::Delete, taskList, this, &MainWindow::removeTask);
     connectSignals();
 }
 
@@ -16,7 +25,6 @@ void MainWindow::closeEvent(QCloseEvent* event) {
 }
 
 void MainWindow::showEvent(QShowEvent* event) {
-    todoList.loadFromSettings();
     updateTaskList();
     QWidget::showEvent(event);
 }
@@ -61,15 +69,6 @@ void MainWindow::toggleTask() {
     }
 }
 
-void MainWindow::DelCompleted() {
-    for (int i = todoList.getTasks().size() - 1; i >= 0; i--) {
-        if (todoList.getTasks()[i].isCompleted()) {
-            todoList.DelTask(i);
-        }
-    }
-    updateTaskList();
-}
-
 void MainWindow::setupUI() {
     setWindowTitle("To-Do List");
     resize(400, 500);
@@ -89,34 +88,45 @@ void MainWindow::setupUI() {
 
     taskList = new QListWidget();
     taskInput = new QLineEdit();
-    addButton = new QPushButton("Добавить");
     removeButton = new QPushButton("Удалить");
     toggleButton = new QPushButton("Выполнено");
-    clearButton = new QPushButton("Удалить выполненные");
 
     mainLayout->addWidget(taskList);
     mainLayout->addLayout(inputLayout);
     mainLayout->addLayout(btnLayout);
 
     inputLayout->addWidget(taskInput);
-    inputLayout->addWidget(addButton);
 
     btnLayout->addWidget(removeButton);
     btnLayout->addWidget(toggleButton);
-    btnLayout->addWidget(clearButton);
+
+    mainLayout->setSpacing(10);
+    mainLayout->setContentsMargins(15, 15, 15, 15);
 }
 
 void MainWindow::connectSignals() {
-    connect(addButton, &QPushButton::clicked, this, &MainWindow::SetTask);
+    connect(taskInput, &QLineEdit::returnPressed, this, &MainWindow::SetTask);
     connect(removeButton, &QPushButton::clicked, this, &MainWindow::removeTask);
     connect(toggleButton, &QPushButton::clicked, this, &MainWindow::toggleTask);
-    connect(clearButton, &QPushButton::clicked, this, &MainWindow::DelCompleted);
     connect(taskList, &QListWidget::itemDoubleClicked, this, &MainWindow::editTask);
+
 }
 
 void MainWindow::updateTaskList() {
     taskList->clear();
     for (const Task& task : todoList.getTasks()) {
-        taskList->addItem(task.toString());
+        QListWidgetItem* item = new QListWidgetItem(task.toString());
+
+        
+        if (task.isCompleted()) {
+            item->setBackground(QColor(144, 238, 144, 100)); 
+            item->setForeground(Qt::darkGreen); 
+
+            QFont font = item->font();
+            font.setStrikeOut(true);
+            item->setFont(font);
+        }
+
+        taskList->addItem(item);
     }
 }

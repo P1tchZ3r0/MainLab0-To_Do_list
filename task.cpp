@@ -19,5 +19,5 @@ void Task::setCompleted(bool comp) {
 }
 
 QString Task::toString() const {
-    return QString("%1 %2").arg(complete ? "[V]" : "[]").arg(Desc);
+    return QString("%1").arg(Desc);
 }
