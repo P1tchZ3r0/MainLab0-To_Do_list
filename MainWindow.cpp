@@ -71,7 +71,7 @@ void MainWindow::toggleTask() {
 
 void MainWindow::setupUI() {
     setWindowTitle("To-Do List");
-    resize(400, 500);
+    resize(500, 600);
     setMinimumSize(300, 200);
     setMaximumSize(800, 600);
 
@@ -102,6 +102,46 @@ void MainWindow::setupUI() {
 
     mainLayout->setSpacing(10);
     mainLayout->setContentsMargins(15, 15, 15, 15);
+    setStyleSheet(R"(
+        QWidget {
+            background-color: #E8E0D0;
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 14px;
+        }
+
+        QListWidget {
+            background-color: #e8e29d;
+            border: 2px solid #E8E0D0;
+            border-radius: 10px;
+            padding: 10px;
+            color: #333;
+        }
+
+        QLineEdit {
+            background-color: #e8e29d;
+            border: 2px solid #E8E0D0;
+            border-radius: 8px;
+            padding: 8px;
+            color: #333;
+        }
+
+        QPushButton {
+            background-color: #e8e29d;
+            border: none;
+            border-radius: 8px;
+            padding: 8px 16px;
+            color: #5A4A3A;
+            font-weight: bold;
+        }
+
+        QPushButton:hover {
+            background-color: #D8D0C0;
+        }
+
+        QPushButton:pressed {
+            background-color: #C8C0B0;
+        }
+    )");
 }
 
 void MainWindow::connectSignals() {
@@ -119,8 +159,8 @@ void MainWindow::updateTaskList() {
 
         
         if (task.isCompleted()) {
-            item->setBackground(QColor(144, 238, 144, 100)); 
-            item->setForeground(Qt::darkGreen); 
+            item->setBackground(QColor(69, 69, 204, 100));
+            item->setForeground(Qt::black); 
 
             QFont font = item->font();
             font.setStrikeOut(true);
