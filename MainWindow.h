@@ -7,6 +7,7 @@
 #include <QPushButton>
 #include <QCloseEvent>
 #include "todolist.h"
+#include <QShortcut>
 
 class MainWindow : public QWidget {
     Q_OBJECT
